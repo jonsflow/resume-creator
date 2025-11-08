@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jonathan Crissey - Resume</title>
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="flower-of-life.js"></script>
     <style id="dynamic-styles"></style>
 </head>
 <body>
@@ -235,7 +236,13 @@
                         display: none;
                     }
                     .profile-image {
-                        display: none;
+                        display: flex !important;
+                        align-items: center;
+                        justify-content: center;
+                        background: none !important;
+                        width: 120px;
+                        height: 120px;
+                        margin: 0 auto 15px auto;
                     }
                     .resume-container {
                         box-shadow: none;
@@ -427,7 +434,10 @@
                 // Render resume
                 const resumeHTML = renderResume(resumeData, layoutConfig);
                 container.innerHTML = resumeHTML;
-                
+
+                // Set up print listener to replace profile image with flower of life
+                window.addEventListener('beforeprint', replaceProfileImageWithFlower);
+
             } catch (error) {
                 console.error('Error loading resume:', error);
                 container.innerHTML = '<div class="error">Error loading resume</div>';
