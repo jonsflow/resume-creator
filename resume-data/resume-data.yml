@@ -8,8 +8,8 @@ personal:
       zip: "78641"
     links:
       - type: "github"
-        url: "jonathanalexander229.github.io"
-        display: "https://jonathanalexander229.github.io/project-home/"
+        url: "jonsflow.github.io"
+        display: "https://jonsflow.github.io/project-home/"
   profile_image:
     path: "IMG_4428.jpeg"
     alt: "Jonathan Crissey Profile Photo"
@@ -91,12 +91,11 @@ sections:
   skills:
     title: "SKILLS"
     categories:
-      - name: "Systems & Kernel Development"
+      - name: "Systems & Applications"
         items:
-          - "Custom initrd/kernel development"
-          - "Linux Administration: RHEL, Ubuntu, SUSE, AIX"
+          - "Linux Administration: RHEL, Ubuntu"
           - "Storage Systems: Ceph, NetApp, Block/File Storage"
-          - "Hardware Platforms: Supermicro, Lenovo management"
+          - "Hardware Onboarding: Supermicro, Lenovo management"
       
       - name: "Cloud & Infrastructure Engineering"
         items:
