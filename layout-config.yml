@@ -14,9 +14,10 @@ layout:
       position: "left"
       sections:
         - "contact"
-        - "education" 
+        - "education"
         - "skills"
         - "interests"
+        - "algorithm"
     main:
       width: "65%"
       position: "right"
@@ -40,8 +41,8 @@ colors:
 typography:
   font_family: "'Helvetica Neue', Arial, sans-serif"
   sizes:
-    name: "36px"
-    main_headings: "18px"
+    name: "28px"
+    main_headings: "14px"
     sidebar_headings: "16px"
     job_titles: "12px"
     sidebar_subheadings: "12px"

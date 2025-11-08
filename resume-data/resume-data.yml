@@ -130,3 +130,7 @@ sections:
       - "EV Enthusiast (Zero & Tesla)"
       - "Financial Markets (trading signals and pattern analysis)"
       - "Sustainable Living & Community Impact"
+
+  algorithm:
+    title: "FLOWER OF LIFE ALGORITHM"
+    content: "Growth: f(n) = 3n^2 + 3n + 1, f(0) = 1, f(n) = f(n-1) + 6n (n = ring level). Intersections: d = sqrt[(x2-x1)^2 + (y2-y1)^2], a = (r^2 + d^2)/(2d), h = sqrt(r^2 - a^2) where d = center distance, r = radius, a = center line distance, h = perpendicular distance. Start center, place 6 circles at 60°, add circles iteratively at intersections."

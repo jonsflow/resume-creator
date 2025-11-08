@@ -36,6 +36,15 @@
         </select>
         <button onclick="loadResume()" style="margin-left: 20px;">Reload Resume</button>
         <button onclick="window.print()" style="margin-left: 10px;">Print Resume</button>
+        <div style="margin-top: 10px;">
+            <label>
+                <input type="checkbox" id="showFlowerOfLife" onchange="toggleFlowerOfLife()"> Show Flower of Life instead of profile photo
+            </label>
+            <br>
+            <label style="margin-top: 8px; display: block;">
+                <input type="checkbox" id="invertSidebar" onchange="toggleInvertSidebar()"> Invert sidebar (light background)
+            </label>
+        </div>
     </div>
 
     <script>
@@ -95,6 +104,24 @@
                 .controls.visible {
                     transform: translateY(0);
                     pointer-events: auto;
+                }
+
+                .easter-egg {
+                    margin-top: 30px;
+                    padding-top: 25px;
+                    border-top: 1px solid #555;
+                }
+
+                .easter-egg h3 {
+                    font-size: 7px !important;
+                    margin-bottom: 4px;
+                    color: #5a6a7a;
+                }
+
+                .easter-egg p {
+                    font-size: 6px !important;
+                    line-height: 1.2;
+                    color: #5a6a7a;
                 }
                 
                 .resume-container {
@@ -307,8 +334,10 @@
                         `;
                     } else if (sections[sectionName]) {
                         const section = sections[sectionName];
-                        sidebarContent += `<h2>${section.title}</h2>`;
-                        
+                        if (sectionName !== 'algorithm') {
+                            sidebarContent += `<h2>${section.title}</h2>`;
+                        }
+
                         if (sectionName === 'education') {
                             section.degrees.forEach(degree => {
                                 sidebarContent += `
@@ -328,6 +357,8 @@
                             });
                         } else if (sectionName === 'interests') {
                             sidebarContent += `<p>${section.items.join(' • ')}</p>`;
+                        } else if (sectionName === 'algorithm') {
+                            sidebarContent += `<div class="easter-egg"><h3>${section.title}</h3><p>${section.content}</p></div>`;
                         }
                     }
                 });
@@ -452,6 +483,93 @@
             const controls = document.getElementById('controls');
             controls.classList.toggle('hidden');
             controls.classList.toggle('visible');
+        }
+
+        function toggleFlowerOfLife() {
+            const showFlower = document.getElementById('showFlowerOfLife').checked;
+            const inverted = document.getElementById('invertSidebar').checked;
+            const profileImages = document.querySelectorAll('.profile-image');
+
+            profileImages.forEach(img => {
+                if (showFlower) {
+                    // Show flower of life (same size as profile image - 120px)
+                    img.innerHTML = generateFlowerOfLifeSVG(120, inverted);
+                    img.style.backgroundImage = 'none';
+                    img.style.backgroundColor = 'transparent';
+                    img.style.display = 'flex';
+                    img.style.alignItems = 'center';
+                    img.style.justifyContent = 'center';
+                    img.style.borderRadius = '50%';
+                    img.style.aspectRatio = '1 / 1';
+                    // Ensure SVG fills the container
+                    const svg = img.querySelector('svg');
+                    if (svg) {
+                        svg.style.width = '100%';
+                        svg.style.height = '100%';
+                    }
+                } else {
+                    // Show profile photo
+                    img.innerHTML = '';
+                    img.style.backgroundImage = resumeData ? `url('${resumeData.personal.profile_image.path}')` : 'none';
+                    img.style.backgroundColor = '#ddd';
+                    img.style.display = 'block';
+                    img.style.borderRadius = '';
+                    img.style.aspectRatio = 'auto';
+                    img.style.width = '';
+                    img.style.height = '';
+                    img.style.margin = '';
+                    img.style.padding = '';
+                }
+            });
+        }
+
+        function toggleInvertSidebar() {
+            const invert = document.getElementById('invertSidebar').checked;
+            const sidebar = document.querySelector('.sidebar');
+
+            if (invert) {
+                // Light background (same as main content)
+                sidebar.style.backgroundColor = '#ffffff';
+                sidebar.style.color = '#333333';
+
+                // Update all text elements in sidebar
+                const sidebarH2 = document.querySelectorAll('.sidebar h2');
+                const sidebarH3 = document.querySelectorAll('.sidebar h3');
+                const sidebarText = document.querySelectorAll('.sidebar p, .sidebar li');
+                const easterEggH3 = document.querySelectorAll('.easter-egg h3');
+                const easterEggP = document.querySelectorAll('.easter-egg p');
+
+                sidebarH2.forEach(h => h.style.color = '#3a4750');
+                sidebarH3.forEach(h => h.style.color = '#3a4750');
+                sidebarText.forEach(p => p.style.color = '#333333');
+                easterEggH3.forEach(h => h.style.color = '#f5f5f5');
+                easterEggP.forEach(p => p.style.color = '#f5f5f5');
+
+                sidebar.style.borderRight = '2px solid #ddd';
+            } else {
+                // Dark background (original)
+                sidebar.style.backgroundColor = '';
+                sidebar.style.color = '';
+                sidebar.style.borderRight = '';
+
+                // Reset all text elements
+                const sidebarH2 = document.querySelectorAll('.sidebar h2');
+                const sidebarH3 = document.querySelectorAll('.sidebar h3');
+                const sidebarText = document.querySelectorAll('.sidebar p, .sidebar li');
+                const easterEggH3 = document.querySelectorAll('.easter-egg h3');
+                const easterEggP = document.querySelectorAll('.easter-egg p');
+
+                sidebarH2.forEach(h => h.style.color = '');
+                sidebarH3.forEach(h => h.style.color = '');
+                sidebarText.forEach(p => p.style.color = '');
+                easterEggH3.forEach(h => h.style.color = '');
+                easterEggP.forEach(p => p.style.color = '');
+            }
+
+            // Update flower of life colors if it's showing
+            if (document.getElementById('showFlowerOfLife').checked) {
+                toggleFlowerOfLife();
+            }
         }
 
         // Load resume on page load
