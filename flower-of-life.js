@@ -36,23 +36,32 @@ function generateFlowerOfLifeSVG(size = 200, circles = 19) {
         circlePositions.push({ x, y, phase: 'flower' });
     }
 
-    const strokeColor = '#ffffff'; // Match sidebar text color
+    const colors = {
+        vesica: '#E74C3C',    // Bold red
+        seed: '#3498DB',      // Bold blue
+        egg: '#2ECC71',       // Bold green
+        flower: '#F39C12'     // Bold orange
+    };
+
     const circleRadius = radius / 2.5;
     let svg = `<svg width="${size}" height="${size}" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <style>
-                .fol-circle { fill: none; stroke-width: 1.5; opacity: 0.9; }
+                .fol-circle { fill: none; stroke-width: 2.5; opacity: 1; }
             </style>
         </defs>
         <rect width="300" height="300" fill="transparent"/>`;
 
-    // Draw all circles in white
-    circlePositions.forEach(circle => {
-        svg += `<circle cx="${circle.x}" cy="${circle.y}" r="${circleRadius}" class="fol-circle" stroke="${strokeColor}"/>`;
+    // Draw circles by phase with bold colors
+    ['vesica', 'seed', 'egg', 'flower'].forEach(phase => {
+        const phaseCircles = circlePositions.filter(c => c.phase === phase);
+        phaseCircles.forEach(circle => {
+            svg += `<circle cx="${circle.x}" cy="${circle.y}" r="${circleRadius}" class="fol-circle" stroke="${colors[phase]}"/>`;
+        });
     });
 
     // Center dot
-    svg += `<circle cx="${centerX}" cy="${centerY}" r="2" fill="${strokeColor}"/>`;
+    svg += `<circle cx="${centerX}" cy="${centerY}" r="3" fill="#E74C3C"/>`;
     svg += `</svg>`;
 
     return svg;
