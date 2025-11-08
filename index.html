@@ -13,7 +13,7 @@
     </div>
 
     <div class="controls-toggle" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; print: display: none;">
-        <button onclick="toggleControls()" style="padding: 10px 15px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">
+        <button onclick="toggleControls()" style="padding: 10px 15px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
             ⚙️ Settings
         </button>
     </div>
