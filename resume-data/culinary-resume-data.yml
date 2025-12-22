@@ -8,8 +8,8 @@ personal:
       zip: "78641"
     links:
       - type: "github"
-        url: "jonathanalexander229.github.io"
-        display: "https://jonathanalexander229.github.io/project-home/"
+        url: "jonsflow.github.io"
+        display: "https://jonsflow.github.io/project-home/"
   profile_image:
     path: "IMG_4428.jpeg"
     alt: "Jonathan Crissey Profile Photo"
@@ -22,6 +22,14 @@ sections:
   experience:
     title: "EXPERIENCE"
     jobs:
+      - position: "Line Cook"
+        company: "CRU Winebar"
+        location: "11410 Century Oaks Terrace #104, Austin, TX. 78758"
+        start_date: "04/15/2025"
+        end_date: "10/15/2025"
+        achievements:
+          - "Pizza, fryer, sides, and cheese boards"
+          - "High-volume service / ticket execution"
       - position: "Software Engineer"
         company: "IBM"
         location: "Austin, TX"
@@ -36,29 +44,25 @@ sections:
         start_date: "2004"
         end_date: "2005"
         achievements:
-          - "Prepared sandwiches to customer specifications."
-          - "Baked bread and cookies."
-          - "Prepped vegetables and meats."
-          - "Handled cash and credit card transactions."
-          - "Maintained a clean and sanitary work environment."
+          - "One of the busiest locations in SA at the time"
+          - "prep, bread, cookies, and line artist"
       - position: "Fry Cook"
         company: "T.G.I. Friday's"
         location: "8363 Agora Pkwy, Selma, TX 78154"
         start_date: "2001"
         end_date: "2002"
         achievements:
-          - "Operated deep fryers to prepare a variety of fried foods."
-          - "Ensured food quality and presentation standards were met."
-          - "Assisted with other kitchen duties as needed."
+          - "Onion ring champion"
+          - "post fry Jack Daniels sauce shakes"
       - position: "Kitchen Staff"
         company: "Jack-in-the-Box"
         location: "15037 Nacogdoches Rd, San Antonio, TX 78247"
         start_date: "2000"
         end_date: "2001"
         achievements:
-          - "Worked all kitchen stations including grill, fry, and prep."
-          - "Operated cash register and handled customer orders."
-          - "Maintained a clean and organized work area."
+          - "grill, fry, and prep."
+          - "drive thru"
+          - "gravyard shift prep and cleaning"
       - position: "Current Favorite Dishes"
         company: "Home Kitchen"
         location: "Leander"
@@ -66,25 +70,22 @@ sections:
         end_date: ""
         achievements:
           - "BBQ Roasted Bone-in Chicken Breast"
-          - "Garden Salad (Green leaf, green mix, red cabbage, cucumber, tomato, avocado, bacon, cheese, with an option for sliced roasted chicken breast)"
-          - "Chicken Curry (made from paste) with onion, squash, and sweet potato"
-          - "Slow-Roast Chuck Roast (slow cooker) with onion, cilantro, and spices"
-          - "2-Egg Omelette with diced tomato, pickled or fresh jalapeno, chopped smoked sausage, and Oaxaca cheese"
+          - "Garden Salad (Green leaf, green mix, red cabbage, cucumber, tomato, avocado, bacon, cheese, optional roasted chicken breast)"
+          - "Chicken Curry"
+          - "Slow-Roast Chuck Roast w/ onion, cilantro, and spices"
+          - "2-Egg Omelette w/ diced tomato, jalapeno, smoked sausage, and Oaxaca cheese"
 
   skills:
     title: "SKILLS"
     categories:
       - name: "Kitchen Skills"
         items:
-          - "Grilling"
-          - "Frying"
-          - "Food Preparation"
-          - "Sandwich Making"
-          - "Salad Preparation"
+          - "Grill"
+          - "Fryer"
+          - "Prep"
+          - "Sandwich / Salads"
           - "Dishwashing"
-          - "Cash Handling"
-          - "Customer Service"
-
+          
   education:
     title: "EDUCATION & TRAINING"
     degrees:
