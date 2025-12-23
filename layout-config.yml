@@ -16,6 +16,7 @@ layout:
         - "contact"
         - "education"
         - "skills"
+        - "favorite_dishes"
         - "interests"
         - "algorithm"
     main:

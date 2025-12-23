@@ -229,7 +229,13 @@ def render_sidebar_section(section_name: str, data: Dict[Any, Any], sections: Di
                     <p>{items}</p>
                 </div>
                 """
-                
+
+        elif section_name == "favorite_dishes":
+            html += "<ul>"
+            for item in section.get('items', []):
+                html += f"<li>• {item}</li>"
+            html += "</ul>"
+
         elif section_name == "interests":
             items = ' • '.join(section.get('items', []))
             html += f"<p>{items}</p>"
@@ -267,12 +273,7 @@ def render_main_section(section_name: str, data: Dict[Any, Any], sections: Dict[
                 for achievement in job.get('achievements', []):
                     html += f"<li>{achievement}</li>"
                 html += "</ul>"
-    
-    elif section_name == "favorite_dishes":
-        html += "<ul>"
-        for item in section.get('items', []):
-            html += f"<li>{item}</li>"
-        html += "</ul>"
+
     return html
 
 def generate_html(data: Dict[Any, Any], layout: Dict[Any, Any]) -> str:

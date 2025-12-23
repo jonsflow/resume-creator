@@ -256,6 +256,12 @@
                                 </div>
                             `;
                         });
+                    } else if (sectionName === 'favorite_dishes') {
+                        sidebarContent += `<ul>`;
+                        section.items.forEach(item => {
+                            sidebarContent += `<li>• ${item}</li>`;
+                        });
+                        sidebarContent += `</ul>`;
                     } else if (sectionName === 'interests') {
                         sidebarContent += `<p>${section.items.join(' • ')}</p>`;
                     }
