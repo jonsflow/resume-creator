@@ -36,7 +36,7 @@ sections:
         start_date: "2007"
         end_date: "present"
         achievements:
-          - "Over 17 years of experience in various software engineering roles, including cloud hardware, storage, mobile development, and enterprise support."
+          - "Over 17 years of experience in various software engineering roles"
           - "Specialized in automation, cloud infrastructure, and building reliable, serviceable systems."
       - position: "Prep, Baker, Cashier, Sandwich Artist"
         company: "Subway"
@@ -45,7 +45,7 @@ sections:
         end_date: "2005"
         achievements:
           - "One of the busiest locations in SA at the time"
-          - "prep, bread, cookies, and line artist"
+          - "Prep, bread, cookies, and line artist"
       - position: "Fry Cook"
         company: "T.G.I. Friday's"
         location: "8363 Agora Pkwy, Selma, TX 78154"
@@ -53,27 +53,16 @@ sections:
         end_date: "2002"
         achievements:
           - "Onion ring champion"
-          - "post fry Jack Daniels sauce shakes"
+          - "Post fry Jack Daniels sauce shakes"
       - position: "Kitchen Staff"
         company: "Jack-in-the-Box"
         location: "15037 Nacogdoches Rd, San Antonio, TX 78247"
         start_date: "2000"
         end_date: "2001"
         achievements:
-          - "grill, fry, and prep."
-          - "drive thru"
-          - "gravyard shift prep and cleaning"
-      - position: "Current Favorite Dishes"
-        company: "Home Kitchen"
-        location: "Leander"
-        start_date: ""
-        end_date: ""
-        achievements:
-          - "BBQ Roasted Bone-in Chicken Breast"
-          - "Garden Salad (Green leaf, green mix, red cabbage, cucumber, tomato, avocado, bacon, cheese, optional roasted chicken breast)"
-          - "Chicken Curry"
-          - "Slow-Roast Chuck Roast w/ onion, cilantro, and spices"
-          - "2-Egg Omelette w/ diced tomato, jalapeno, smoked sausage, and Oaxaca cheese"
+          - "Grill, fry, and prep"
+          - "Drive thru"
+          - "Graveyard shift prep and cleaning"
 
   skills:
     title: "SKILLS"
@@ -85,7 +74,16 @@ sections:
           - "Prep"
           - "Sandwich / Salads"
           - "Dishwashing"
-          
+
+  favorite_dishes:
+    title: "FAVORITE DISHES"
+    items:
+      - "BBQ Roasted Bone-in Chicken Breast"
+      - "Garden Salad (Green leaf, green mix, red cabbage, cucumber, tomato, avocado, bacon, cheese, optional roasted chicken breast)"
+      - "Chicken Curry"
+      - "Slow-Roast Chuck Roast w/ onion, cilantro, and spices"
+      - "2-Egg Omelette w/ diced tomato, jalapeno, smoked sausage, and Oaxaca cheese"
+
   education:
     title: "EDUCATION & TRAINING"
     degrees:
