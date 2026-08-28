@@ -22,10 +22,10 @@ def load_yaml(filename: str) -> Dict[Any, Any]:
 
 def generate_css(layout: Dict[Any, Any]) -> str:
     """Generate CSS from layout configuration"""
-    colors = layout.get('colors', {{}})
-    typography = layout.get('typography', {{}})
-    spacing = layout.get('spacing', {{}})
-    elements = layout.get('elements', {{}})
+    colors = layout.get('colors', {})
+    typography = layout.get('typography', {})
+    spacing = layout.get('spacing', {})
+    elements = layout.get('elements', {})
     
     return f"""
 *
@@ -36,37 +36,37 @@ def generate_css(layout: Dict[Any, Any]) -> str:
 
 body {{
     font-family: {typography.get('font_family', 'Arial, sans-serif')};
-    line-height: {typography.get('spacing', {{}}).get('line_height', '1.4')};
-    color: {colors.get('main', {{}}).get('text', '#333')};
-    background: {colors.get('main', {{}}).get('background', 'white')};
+    line-height: {typography.get('spacing', {}).get('line_height', '1.4')};
+    color: {colors.get('main', {}).get('text', '#333')};
+    background: {colors.get('main', {}).get('background', 'white')};
 }}
 
 .resume-container {{
-    max-width: {layout.get('layout', {{}}).get('page', {{}}).get('max_width', '8.5in')};
-    min-height: {layout.get('layout', {{}}).get('page', {{}}).get('min_height', '11in')};
+    max-width: {layout.get('layout', {}).get('page', {}).get('max_width', '8.5in')};
+    min-height: {layout.get('layout', {}).get('page', {}).get('min_height', '11in')};
     margin: 0 auto;
     display: flex;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }}
 
 .sidebar {{
-    width: {layout.get('layout', {{}}).get('structure', {{}}).get('sidebar', {{}}).get('width', '35%')};
-    background: {colors.get('sidebar', {{}}).get('background', '#3a4750')};
-    color: {colors.get('sidebar', {{}}).get('text', 'white')};
+    width: {layout.get('layout', {}).get('structure', {}).get('sidebar', {}).get('width', '35%')};
+    background: {colors.get('sidebar', {}).get('background', '#3a4750')};
+    color: {colors.get('sidebar', {}).get('text', 'white')};
     padding: {spacing.get('container_padding', '40px')} {spacing.get('sidebar_padding', '30px')};
 }}
 
 .main-content {{
-    width: {layout.get('layout', {{}}).get('structure', {{}}).get('main', {{}}).get('width', '65%')};
+    width: {layout.get('layout', {}).get('structure', {}).get('main', {}).get('width', '65%')};
     padding: {spacing.get('container_padding', '40px')};
-    background: {colors.get('main', {{}}).get('background', 'white')};
+    background: {colors.get('main', {}).get('background', 'white')};
 }}
 
 .profile-image {{
-    width: {elements.get('profile_image', {{}}).get('width', '120px')};
-    height: {elements.get('profile_image', {{}}).get('height', '120px')};
-    border-radius: {elements.get('profile_image', {{}}).get('border_radius', '50%')};
-    margin: 0 auto {elements.get('profile_image', {{}}).get('margin_bottom', '30px')};
+    width: {elements.get('profile_image', {}).get('width', '120px')};
+    height: {elements.get('profile_image', {}).get('height', '120px')};
+    border-radius: {elements.get('profile_image', {}).get('border_radius', '50%')};
+    margin: 0 auto {elements.get('profile_image', {}).get('margin_bottom', '30px')};
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -74,25 +74,25 @@ body {{
 }}
 
 .sidebar h2 {{
-    font-size: {typography.get('sizes', {{}}).get('sidebar_headings', '16px')};
-    font-weight: {typography.get('weights', {{}}).get('headings', 'bold')};
+    font-size: {typography.get('sizes', {}).get('sidebar_headings', '16px')};
+    font-weight: {typography.get('weights', {}).get('headings', 'bold')};
     margin-bottom: {spacing.get('subsection_margin', '15px')};
     letter-spacing: 1px;
-    border-bottom: {elements.get('borders', {{}}).get('sidebar_headings', {{}}).get('bottom', '2px solid #5a6a7a')};
-    padding-bottom: {elements.get('borders', {{}}).get('sidebar_headings', {{}}).get('padding_bottom', '8px')};
+    border-bottom: {elements.get('borders', {}).get('sidebar_headings', {}).get('bottom', '2px solid #5a6a7a')};
+    padding-bottom: {elements.get('borders', {}).get('sidebar_headings', {}).get('padding_bottom', '8px')};
 }}
 
 .sidebar h3 {{
-    font-size: {typography.get('sizes', {{}}).get('sidebar_subheadings', '12px')};
-    font-weight: {typography.get('weights', {{}}).get('headings', 'bold')};
+    font-size: {typography.get('sizes', {}).get('sidebar_subheadings', '12px')};
+    font-weight: {typography.get('weights', {}).get('headings', 'bold')};
     margin-top: {spacing.get('subsection_margin', '15px')};
     margin-bottom: 5px;
 }}
 
 .sidebar p, .sidebar li {{
-    font-size: {typography.get('sizes', {{}}).get('sidebar_text', '10px')};
+    font-size: {typography.get('sizes', {}).get('sidebar_text', '10px')};
     margin-bottom: 5px;
-    line-height: {typography.get('spacing', {{}}).get('sidebar_line_height', '1.3')};
+    line-height: {typography.get('spacing', {}).get('sidebar_line_height', '1.3')};
 }}
 
 .sidebar ul {{
@@ -109,50 +109,50 @@ body {{
 
 .skills-category strong {{
     display: block;
-    font-size: {typography.get('sizes', {{}}).get('sidebar_text', '10px')};
+    font-size: {typography.get('sizes', {}).get('sidebar_text', '10px')};
     margin-bottom: 3px;
 }}
 
 .main-content h1 {{
-    font-size: {typography.get('sizes', {{}}).get('name', '36px')};
-    font-weight: {typography.get('weights', {{}}).get('headings', 'bold')};
-    color: {colors.get('main', {{}}).get('headings', '#3a4750')};
+    font-size: {typography.get('sizes', {}).get('name', '36px')};
+    font-weight: {typography.get('weights', {}).get('headings', 'bold')};
+    color: {colors.get('main', {}).get('headings', '#3a4750')};
     margin-bottom: 10px;
     letter-spacing: 2px;
 }}
 
 .main-content h2 {{
-    font-size: {typography.get('sizes', {{}}).get('main_headings', '18px')};
-    font-weight: {typography.get('weights', {{}}).get('headings', 'bold')};
-    color: {colors.get('main', {{}}).get('headings', '#3a4750')};
+    font-size: {typography.get('sizes', {}).get('main_headings', '18px')};
+    font-weight: {typography.get('weights', {}).get('headings', 'bold')};
+    color: {colors.get('main', {}).get('headings', '#3a4750')};
     margin-top: {spacing.get('section_margin', '25px')};
     margin-bottom: {spacing.get('subsection_margin', '15px')};
-    border-bottom: {elements.get('borders', {{}}).get('main_headings', {{}}).get('bottom', '2px solid #ddd')};
-    padding-bottom: {elements.get('borders', {{}}).get('main_headings', {{}}).get('padding_bottom', '5px')};
+    border-bottom: {elements.get('borders', {}).get('main_headings', {}).get('bottom', '2px solid #ddd')};
+    padding-bottom: {elements.get('borders', {}).get('main_headings', {}).get('padding_bottom', '5px')};
 }}
 
 .job-header {{
-    display: {elements.get('job_header', {{}}).get('display', 'flex')};
-    justify-content: {elements.get('job_header', {{}}).get('justify_content', 'space-between')};
-    align-items: {elements.get('job_header', {{}}).get('align_items', 'center')};
+    display: {elements.get('job_header', {}).get('display', 'flex')};
+    justify-content: {elements.get('job_header', {}).get('justify_content', 'space-between')};
+    align-items: {elements.get('job_header', {}).get('align_items', 'center')};
     margin-bottom: 5px;
 }}
 
 .job-title {{
-    font-size: {typography.get('sizes', {{}}).get('job_titles', '12px')};
-    font-weight: {typography.get('weights', {{}}).get('job_titles', 'bold')};
-    color: {colors.get('main', {{}}).get('headings', '#3a4750')};
+    font-size: {typography.get('sizes', {}).get('job_titles', '12px')};
+    font-weight: {typography.get('weights', {}).get('job_titles', 'bold')};
+    color: {colors.get('main', {}).get('headings', '#3a4750')};
 }}
 
 .job-date {{
-    font-size: {typography.get('sizes', {{}}).get('body_text', '10px')};
-    color: {colors.get('main', {{}}).get('muted', '#666')};
+    font-size: {typography.get('sizes', {}).get('body_text', '10px')};
+    color: {colors.get('main', {}).get('muted', '#666')};
     font-style: italic;
 }}
 
 .job-company {{
-    font-size: {typography.get('sizes', {{}}).get('body_text', '10px')};
-    color: {colors.get('main', {{}}).get('muted', '#666')};
+    font-size: {typography.get('sizes', {}).get('body_text', '10px')};
+    color: {colors.get('main', {}).get('muted', '#666')};
     font-style: italic;
     margin-bottom: {spacing.get('item_margin', '8px')};
 }}
@@ -163,15 +163,15 @@ body {{
 }}
 
 .main-content li {{
-    font-size: {typography.get('sizes', {{}}).get('body_text', '10px')};
+    font-size: {typography.get('sizes', {}).get('body_text', '10px')};
     margin-bottom: 3px;
-    color: {colors.get('main', {{}}).get('secondary', '#555')};
+    color: {colors.get('main', {}).get('secondary', '#555')};
 }}
 
 .profile-text {{
-    font-size: {typography.get('sizes', {{}}).get('profile_text', '11px')};
-    color: {colors.get('main', {{}}).get('secondary', '#555')};
-    line-height: {typography.get('spacing', {{}}).get('profile_line_height', '1.5')};
+    font-size: {typography.get('sizes', {}).get('profile_text', '11px')};
+    color: {colors.get('main', {}).get('secondary', '#555')};
+    line-height: {typography.get('spacing', {}).get('profile_line_height', '1.5')};
     margin-bottom: 20px;
 }}
 
@@ -193,9 +193,9 @@ def render_sidebar_section(section_name: str, data: Dict[Any, Any], sections: Di
     html = ""
     
     if section_name == "contact":
-        personal = data.get('personal', {{}})
-        contact = personal.get('contact', {{}})
-        location = contact.get('location', {{}})
+        personal = data.get('personal', {})
+        contact = personal.get('contact', {})
+        location = contact.get('location', {})
         links = contact.get('links', [])
         
         html += f"""
@@ -247,7 +247,7 @@ def render_main_section(section_name: str, data: Dict[Any, Any], sections: Dict[
     html = ""
     
     if section_name == "header":
-        personal = data.get('personal', {{}})
+        personal = data.get('personal', {})
         html += f"<h1>{personal.get('full_name', '')}</h1>"
         
     elif section_name in sections:
@@ -256,7 +256,15 @@ def render_main_section(section_name: str, data: Dict[Any, Any], sections: Dict[
         
         if section_name == "profile":
             html += f'<p class="profile-text">{section.get("content", "")}</p>'
-            
+
+        elif section_name == "ai_engineering":
+            if section.get("content"):
+                html += f'<p class="profile-text">{section["content"]}</p>'
+            html += "<ul>"
+            for highlight in section.get('highlights', []):
+                html += f"<li>{highlight}</li>"
+            html += "</ul>"
+
         elif section_name == "experience":
             for job in section.get('jobs', []):
                 start_date = format_date(job.get('start_date', ''))
@@ -278,18 +286,18 @@ def render_main_section(section_name: str, data: Dict[Any, Any], sections: Dict[
 
 def generate_html(data: Dict[Any, Any], layout: Dict[Any, Any]) -> str:
     """Generate complete HTML from data and layout"""
-    personal = data.get('personal', {{}})
-    sections = data.get('sections', {{}})
+    personal = data.get('personal', {})
+    sections = data.get('sections', {})
     
     # Generate CSS
     css = generate_css(layout)
     
     # Render sidebar
-    sidebar_sections = layout.get('layout', {{}}).get('structure', {{}}).get('sidebar', {{}}).get('sections', [])
+    sidebar_sections = layout.get('layout', {}).get('structure', {}).get('sidebar', {}).get('sections', [])
     sidebar_html = ""
     
     # Add profile image first
-    profile_image = personal.get('profile_image', {{}})
+    profile_image = personal.get('profile_image', {})
     sidebar_html += f'<div class="profile-image" style="background-image: url(\'{profile_image.get("path", "")}\');"></div>'
     
     # Add sidebar sections
@@ -297,7 +305,7 @@ def generate_html(data: Dict[Any, Any], layout: Dict[Any, Any]) -> str:
         sidebar_html += render_sidebar_section(section_name, data, sections)
     
     # Render main content
-    main_sections = layout.get('layout', {{}}).get('structure', {{}}).get('main', {{}}).get('sections', [])
+    main_sections = layout.get('layout', {}).get('structure', {}).get('main', {}).get('sections', [])
     main_html = ""
     
     for section_name in main_sections:
