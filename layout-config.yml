@@ -25,6 +25,7 @@ layout:
       sections:
         - "header"
         - "profile"
+        - "ai_engineering"
         - "experience"
 
 colors:

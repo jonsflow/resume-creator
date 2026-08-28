@@ -6,3 +6,6 @@ resume-output.html
 
 # Python cache
 __pycache__/
+# Generated resume output
+resume-data.html
+culinary-resume-data.html

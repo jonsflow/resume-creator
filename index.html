@@ -53,7 +53,7 @@
 
         async function loadYAML(filename) {
             try {
-                const response = await fetch(filename);
+                const response = await fetch(`${filename}?t=${Date.now()}`, { cache: 'no-store' });
                 const text = await response.text();
                 return jsyaml.load(text);
             } catch (error) {
@@ -84,6 +84,8 @@
                     line-height: ${typography.spacing.line_height};
                     color: ${colors.main.text};
                     background: ${colors.main.background};
+                    /* clear the fixed controls bar so it can't overlay page content */
+                    padding-bottom: 160px;
                 }
                 
                 .controls {
@@ -259,6 +261,9 @@
                 }
                 
                 @media print {
+                    body {
+                        padding-bottom: 0;
+                    }
                     .controls {
                         display: none;
                     }
@@ -374,6 +379,11 @@
                     
                     if (sectionName === 'profile') {
                         mainContent += `<p class="profile-text">${section.content}</p>`;
+                    } else if (sectionName === 'ai_engineering') {
+                        if (section.content) {
+                            mainContent += `<p class="profile-text">${section.content}</p>`;
+                        }
+                        mainContent += `<ul>${section.highlights.map(h => `<li>${h}</li>`).join('')}</ul>`;
                     } else if (sectionName === 'experience') {
                         section.jobs.forEach(job => {
                             mainContent += `

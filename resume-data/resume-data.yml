@@ -17,8 +17,20 @@ personal:
 sections:
   profile:
     title: "PROFILE"
-    content: "Software Engineer with 18 years of experience spanning enterprise support, mobile development, and cloud infrastructure. Developed mobile applications, automated storage systems lifecycle management using Ansible and Ceph, and currently manage hardware platforms through Redfish APIs. Brings operational perspective to development decisions, helping teams build more reliable and serviceable systems."
+    content: "Software Engineer with 18 years of experience spanning enterprise support, mobile development, and cloud infrastructure, now focused on AI-assisted software delivery. Ships production features by pairing with coding agents and validating their output with real test suites, CI gates, and hands-on verification rather than accepting generated code on faith. Applies this daily across 26 personal repositories in Swift, Python, and JavaScript, spanning mobile, web, and backend work. Brings an operational and support background to development decisions, helping teams build systems that are reliable, serviceable, and actually verified."
     
+  ai_engineering:
+    title: "AI-ASSISTED ENGINEERING"
+    content: "Builds software in partnership with AI coding agents, and builds the systems that make those agents trustworthy. AI has assisted development workflows across 25 personal repositories. Focus: keeping the machine predictable, and proving the work is correct before it ships. Motivated by how far this lowers the cost of trying an idea — problems once written off as too time-consuming or too specialized are now worth attempting. Selected public projects are documented at jonsflow.github.io/project-home."
+    highlights:
+      - "Predictable AI systems: orchestration layer where ordinary, testable code controls what runs and when, and AI handles only judgment — repeatable, auditable, not locked to one vendor"
+      - "Assembly-line automation: pipeline splitting work across specialist agents — research, writing, review, design — with an automated reviewer that must approve before work moves on"
+      - "Safe execution: disposable, isolated environment for AI-written code, so nothing an agent produces can reach the real machine"
+      - "Retrieval-augmented generation: built four retrieval designs that feed a language model the right context from a large codebase, then scored them against each other to prove which produced the best answers instead of assuming"
+      - "Multi-modal AI: applying models beyond text — vision over video and images, plus speech-to-text and text-to-speech running locally on-device"
+      - "Verification, not trust: reusable procedures that exercise AI-generated changes against the real app, browser, and API instead of accepting an agent's report — backed by maintained test suites and CI gates that block unproven changes"
+      - "Context engineering: 19 project guides and 8 reusable procedures that teach agents each codebase's architecture, workflow, and safety rules"
+
   experience:
     title: "EXPERIENCE"
     jobs:
@@ -91,6 +103,14 @@ sections:
   skills:
     title: "SKILLS"
     categories:
+      - name: "AI-Assisted Engineering"
+        items:
+          - "AI-Paired Development: shipping production features with AI coding agents across Swift, Python, and JavaScript"
+          - "Agent Orchestration: multi-agent pipelines, deterministic control layers, vendor-independent design"
+          - "Validating AI Output: automated test gates, browser and API verification, CI checks that block unproven changes"
+          - "Safe Automation: isolated sandboxes for agent-written code; local, on-device model hosting for cost and privacy"
+          - "Context Engineering: project guides and reusable procedures that make agents productive on a specific codebase"
+
       - name: "Systems & Applications"
         items:
           - "Linux Administration: RHEL, Ubuntu"
@@ -130,6 +150,7 @@ sections:
       - "EV Enthusiast (Zero & Tesla)"
       - "Financial Markets (trading signals and pattern analysis)"
       - "Sustainable Living & Community Impact"
+      - "Transformative AI (society's greatest problems, new perspectives, human potential)"
 
   algorithm:
     title: "FLOWER OF LIFE ALGORITHM"
