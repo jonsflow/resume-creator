@@ -1,0 +1,60 @@
+meta:
+  target: "DataAnnotation.tech"
+  role: "Software Engineer"
+  status: "draft"
+
+letter:
+  salutation: "Dear DataAnnotation.tech Team,"
+
+  paragraphs:
+    - >-
+      Your posting caught my attention because it describes something I already do,
+      both professionally and on my own time. A model can write an entire feature now,
+      and someone still has to determine whether it holds up.
+
+    - >-
+      That instinct predates the tooling. My first six years at IBM were spent on the
+      other side of software, handling escalations when it broke in front of customers,
+      which teaches you quickly that a system's real behavior is whatever it does under
+      pressure rather than whatever the design claims. Eighteen years on, the work is
+      much the same in character. As Cloud Hardware Platform Engineer I automate hardware
+      deployment and configuration for software defined storage systems, including
+      firmware and certificate management, and spend a good share of the time validating
+      and stress testing equipment until it misbehaves.
+
+    - >-
+      Coding agents entered that picture around 2024, first through Copilot and local
+      Ollama models I ran myself, more recently through IBM Bob and several watsonx
+      projects. What became obvious early was how fast the bottleneck moved. Generating
+      a feature stopped being the hard part. Knowing whether it held up became the hard
+      part.
+
+    - >-
+      So most of my effort since has gone into that second half. Across 25 personal
+      repositories that has meant an orchestration layer that keeps sequencing in regular
+      testable code and leaves only judgment calls to the model, a pipeline that splits
+      work across specialist agents behind a reviewer that has to approve output before
+      it advances, and a disposable container so agent-written code never touches the
+      host. Verification procedures force a generated change to be exercised against the
+      real app, browser, and API, and picking a retrieval approach for questions about a
+      large codebase meant building four of them and scoring them against each other
+      rather than guessing.
+
+    - >-
+      The obstacle I keep running into is not capability, it is trust. Plenty of capable
+      engineers have decided these tools are not worth using, usually after collecting
+      every small thing a model got wrong and reading that list as a verdict. Finding
+      those failures is genuinely useful work. The difference is whether you are
+      documenting them to improve the next version or to justify standing still.
+
+    - >-
+      That distinction is what makes this role worth doing. Running agent sessions
+      against real engineering problems, pushing until something breaks in an interesting
+      way, and writing it down so the next generation is better for it, is work worth
+      wanting on its own terms. AI looks like the best opportunity we have at problems we
+      had mostly given up on, and making it dependable is the part that needs doing.
+
+  portfolio_line: "Some of my public projects are at jonsflow.github.io/project-home."
+
+  closing: "Thank you for your time,"
+  signature: "Jonathan Crissey"
