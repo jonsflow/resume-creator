@@ -1,48 +1,65 @@
 # Resume Creator
 
-A modular resume generation system that creates professional resumes from YAML data files with configurable layouts and themes.
+A modular resume generation system that builds professional resumes from YAML content and
+swappable layout configurations.
 
 ## Quick Start
 
-Choose one of two approaches:
-
-### Option 1: JavaScript Renderer (Live Preview)
 ```bash
 python3 -m http.server 8000
 ```
-Then open: http://localhost:8000/resume-viewer.html
 
-**Features:**
-- Live YAML loading and rendering
-- Reload button to refresh changes
-- Dynamic CSS generation from layout config
-- No build step required
+Open http://localhost:8000 — pick a resume and a layout from the dropdowns, then use
+Print Resume to save a PDF.
 
-### Option 2: Python Generator (Static Files)
+For a static, self-contained file instead:
+
 ```bash
 pip install -r requirements.txt
 python3 build_resume.py
 ```
-This creates `resume-output.html` - a self-contained file with embedded CSS.
 
-**Features:**
-- Static HTML generation
-- Self-contained output file
-- Programmatic customization
-- Perfect for CI/CD or batch processing
+It prompts for which resume to build and writes `<resume-name>.html` (for example
+`resume-data.html`) with CSS embedded. Note that it always uses `layout-config.yml`.
 
 ## File Structure
 
-- `resume-data/` - Directory containing your resume content in YAML files.
-- `layout-config.yml` - Layout configuration (colors, fonts, spacing, structure)
-- `resume-viewer.html` - JavaScript client-side renderer
-- `build_resume.py` - Python static generator
-- `IMG_4428.jpeg` - Profile image
+```
+resume-data/                 your resume content
+  resume-data.yml
+  culinary-resume-data.yml
+layout-config.yml            two-column professional (default)
+layout-modern.yml            two-column, larger type
+layout-creative.yml          two-column, header in sidebar
+layout-minimal.yml           single column
+cover-letter.yml             cover letter content
+index.html                   main renderer (served at /)
+resume-viewer.html           older renderer
+build_resume.py              static generator
+IMG_4428.jpeg                profile image
+```
 
-## Creating New Layouts
+## Layouts
 
-1. Copy `layout-config.yml` to `layout-modern.yml` (or any name)
-2. Modify colors, typography, spacing as desired
-3. Both renderers can use the new layout configuration
+Content and presentation are fully separated, so the same resume data renders through any
+layout. A layout config controls colors, typography, spacing, and which sections appear in
+which column.
 
-The YAML-based approach makes it easy to create multiple resume themes while keeping your content separate from presentation.
+`layout-minimal.yml` is single-column. Prefer it for applications submitted through an
+applicant tracking system — multi-column layouts are often parsed incorrectly, and a
+dropped sidebar takes the whole skills section with it.
+
+## Creating a New Layout
+
+1. Copy an existing layout config to a new name
+2. Adjust `colors`, `typography`, `spacing`, and the `layout.structure` section lists
+3. Add it to the layout dropdown in `index.html`
+
+Every section named in `structure.sidebar.sections` or `structure.main.sections` must have
+a matching renderer branch, or it will render as a heading with nothing beneath it.
+
+## Adding a Section
+
+Rendering logic is currently duplicated across `index.html`, `resume-viewer.html`, and
+`build_resume.py`, so a new section type needs a branch added in each. See `CLAUDE.md` for
+the section shapes and the planned refactor that would remove this duplication.
